@@ -4,19 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Imperium Pizza | Sabor Premium</title>
-
-    <link rel="icon" type="crown.ico" href="crown.ico" />
-
+    <link rel="icon" type="image/x-icon" href="crown.ico" />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -32,26 +28,26 @@
         </ul>
       </nav>
       <div class="header-actions">
-        <div class="cart-icon" onclick="toggleCart()">
+        <div class="cart-icon" id="btn-toggle-cart">
           <i class="fas fa-shopping-bag"></i>
           <span id="cart-badge">0</span>
         </div>
-        <div class="hamburger" onclick="toggleMobileMenu()">
+        <div class="hamburger" id="btn-mobile-menu">
           <i class="fas fa-bars"></i>
         </div>
       </div>
     </header>
 
     <div class="mobile-menu" id="mobile-menu">
-      <a href="#salgadas" onclick="toggleMobileMenu()">Pizzas</a>
-      <a href="#doces" onclick="toggleMobileMenu()">Doces</a>
-      <a href="#bebidas" onclick="toggleMobileMenu()">Bebidas</a>
+      <a href="#salgadas" class="mobile-link">Pizzas</a>
+      <a href="#doces" class="mobile-link">Doces</a>
+      <a href="#bebidas" class="mobile-link">Bebidas</a>
     </div>
 
     <aside id="cart-sidebar" class="cart-sidebar">
       <div class="cart-header">
         <h3>Seu Pedido</h3>
-        <button class="close-cart" onclick="toggleCart()">&times;</button>
+        <button class="close-cart" id="btn-close-cart">&times;</button>
       </div>
       <div id="cart-items" class="cart-items"></div>
       <div class="cart-footer">
@@ -59,10 +55,7 @@
           <span>Total:</span>
           <span id="cart-total-value">R$ 0,00</span>
         </div>
-        <button
-          class="btn-checkout"
-          onclick="alert('Pedido enviado para o balcão! (Simulação)')"
-        >
+        <button class="btn-checkout" id="btn-checkout">
           Finalizar Pedido
         </button>
       </div>
@@ -75,9 +68,7 @@
     <section id="home" class="hero">
       <div class="hero-content">
         <h1>A Pizza que domina a sua fome</h1>
-        <p>
-          Massa de fermentação lenta, forno a lenha e ingredientes de elite.
-        </p>
+        <p>Massa de fermentação lenta, forno a lenha e ingredientes de elite.</p>
         <a href="#salgadas" class="btn-cta">Ver Cardápio</a>
       </div>
     </section>
@@ -85,262 +76,31 @@
     <main class="container">
       <section id="salgadas" class="menu-category">
         <h2 class="category-title">As Salgadas (Clássicas & Premium)</h2>
-        <div class="grid-menu">
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/874332804/pt/foto/calabrian-pizza.jpg?s=612x612&w=0&k=20&c=f5LxklGxScA9tTzV3uarUrjLe5Z8wDEgXcyYeEEZe1w="
-              alt="Calabresa"
-            />
-            <h3>Calabresa</h3>
-            <p>Calabresa defumada, cebola roxa, azeitonas e orégano.</p>
-            <span>R$ 39,90</span>
-            <button onclick="addToCart('Calabresa Imperial', 39.90)">
-              Add +
-            </button>
-          </article>
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/1189884515/pt/foto/margherita-pizza-with-ham-and-pepper-on-white-background.jpg?s=612x612&w=0&k=20&c=9KEd8nIidmhmF-EaCSlANzGRl4eiGBbKf9chPBLvmSY="
-              alt="Marguerita"
-            />
-            <h3>Marguerita</h3>
-            <p>Mussarela de búfala, tomate italiano e manjericão fresco.</p>
-            <span>R$ 42,90</span>
-            <button onclick="addToCart('Marguerita Real', 42.90)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/534635519/pt/foto/pizza.jpg?s=612x612&w=0&k=20&c=TqGtmupAiFgSF2j8WbP5iZbtcycSyWOH_79vBhL2VTo="
-              alt="Portuguesa"
-            />
-            <h3>Portuguesa</h3>
-            <p>Presunto, ovo, ervilha, cebola e azeitonas pretas.</p>
-            <span>R$ 45,90</span>
-            <button onclick="addToCart('Portuguesa', 45.90)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/1327326168/pt/foto/pizza-pepperoni-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=KG0d7MK7pmWP4gsPAXqp8OMwBf-i387ohMvAo4E0Qdo="
-              alt="Pepperoni"
-            />
-            <h3>Pepperoni NY</h3>
-            <p>Dobro de pepperoni importado e queijo mussarela.</p>
-            <span>R$ 49,90</span>
-            <button onclick="addToCart('Pepperoni NY', 49.90)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/1191586130/pt/foto/white-four-cheeses-pizza-isolated-on-white-background-close-up.jpg?s=612x612&w=0&k=20&c=217QC7JxFG2eiXp4N-HrUzw4_e8LcnQg_e5oomgbSk4="
-              alt="4 Queijos"
-            />
-            <h3>Quatro Queijos</h3>
-            <p>Gorgonzola, provolone, parmesão e catupiry.</p>
-            <span>R$ 48,90</span>
-            <button onclick="addToCart('Quatro Queijos', 48.90)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/186295807/pt/foto/galinha-tikka-pizza.jpg?s=612x612&w=0&k=20&c=yo0jsL2gORl6YnLmkizIXO4m1HqxkzB7PKihZu1phWQ="
-              alt="Frango"
-            />
-            <h3>Frango Supremo</h3>
-            <p>Frango desfiado, milho, bacon e catupiry original.</p>
-            <span>R$ 44,90</span>
-            <button onclick="addToCart('Frango Supremo', 44.90)">
-              Add +
-            </button>
-          </article>
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/174902112/pt/foto/carne-amantes-de-pizza3.jpg?s=612x612&w=0&k=20&c=QOn4t9ES3dt_wa6MidW5A96DlnaJeVsHztqOhXDtwKQ="
-              alt="Carne Seca"
-            />
-            <h3>Nordestina</h3>
-            <p>Carne seca desfiada, cebola roxa e queijo coalho.</p>
-            <span>R$ 52,90</span>
-            <button onclick="addToCart('Nordestina', 52.90)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/184098729/pt/foto/pizza-vegetariana-03.jpg?s=612x612&w=0&k=20&c=nfCPGuGzOCKMkP-5mq8o1I4yoeUw1usF6FwkR_1WJwA="
-              alt="Vegetariana"
-            />
-            <h3>Horta Fina</h3>
-            <p>Brócolis, palmito, tomate seco e champignon.</p>
-            <span>R$ 46,90</span>
-            <button onclick="addToCart('Horta Fina', 46.90)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/175385309/pt/foto/pizza.jpg?s=612x612&w=0&k=20&c=SNNPdSxQFyQgf0kUR4moSqEX2rhdq6Q3tSRDIIbU6ak="
-              alt="Bacon"
-            />
-            <h3>Bacon Crocante</h3>
-            <p>Mussarela e tiras de bacon extra crocantes.</p>
-            <span>R$ 43,90</span>
-            <button onclick="addToCart('Bacon Crocante', 43.90)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/1192287215/pt/foto/delicious-pizza-with-meat-on-white.jpg?s=612x612&w=0&k=20&c=YduSKGOJZGsb1WttOA6j1Z_m-wVGFEUmyvo5DtfCSbg="
-              alt="Lombo"
-            />
-            <h3>Lombo Canadense</h3>
-            <p>Lombo defumado e abacaxi caramelizado.</p>
-            <span>R$ 47,90</span>
-            <button onclick="addToCart('Lombo Canadense', 47.90)">
-              Add +
-            </button>
-          </article>
-        </div>
+        <div class="grid-menu" id="grid-salgadas"></div>
       </section>
 
       <section id="doces" class="menu-category">
         <h2 class="category-title">Doces & Sobremesas</h2>
-        <div class="grid-menu">
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/964267588/pt/foto/pizza-de-chocolate.jpg?s=612x612&w=0&k=20&c=S0ZCD9IBEWUVvxif0IXAsWwXF7GV0ojrMZAlRkYixmU="
-              alt="Choco"
-            />
-            <h3>Chocolate Real</h3>
-            <p>Ganache de chocolate meio amargo e raspas.</p>
-            <span>R$ 35,90</span>
-            <button onclick="addToCart('Chocolate Real', 35.90)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/531619124/pt/foto/engra%C3%A7ado-pizza-vista-superior-isolados.jpg?s=612x612&w=0&k=20&c=mnR_SC6d0PGJJ7KumncWVHzx8ZR93duUCZyepBXv-DM="
-              alt="Morango"
-            />
-            <h3>Sensação</h3>
-            <p>Chocolate ao leite coberto com morangos frescos.</p>
-            <span>R$ 38,90</span>
-            <button onclick="addToCart('Sensação', 38.90)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/1095964018/pt/foto/sweet-dessert-pizza-with-chocolate-colored-candy.jpg?s=612x612&w=0&k=20&c=I8hUVRQ4VNwgegCnMKPxqUuil19C6PQyexKHPsaT2Dg="
-              alt="Banana"
-            />
-            <h3>Banana Nevada</h3>
-            <p>Banana, leite condensado, canela e chocolate branco.</p>
-            <span>R$ 32,90</span>
-            <button onclick="addToCart('Banana Nevada', 32.90)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://s3-sa-east-1.amazonaws.com/deliveryon-uploads/products/hummmpizzas/209_647f6339db857.png"
-              alt="Prestigio"
-            />
-            <h3>Prestígio</h3>
-            <p>Chocolate ao leite com muito coco ralado.</p>
-            <span>R$ 36,90</span>
-            <button onclick="addToCart('Prestígio', 36.90)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/182477190/pt/foto/candy-shop-pizza.jpg?s=612x612&w=0&k=20&c=BpyXb0FE2NocH70w_0_oC56VjxvoLpTLDIr-DA1_gUY="
-              alt="Confeti"
-            />
-            <h3>Confete Kids</h3>
-            <p>Chocolate ao leite coberto com M&Ms coloridos.</p>
-            <span>R$ 34,90</span>
-            <button onclick="addToCart('Confete Kids', 34.90)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://www.cosmopolitapizza.com.br/wp-content/uploads/2021/03/ROMEU_E_JULIETA.png"
-              alt="Romeu"
-            />
-            <h3>Romeu e Julieta</h3>
-            <p>Goiabada cremosa com queijo minas.</p>
-            <span>R$ 33,90</span>
-            <button onclick="addToCart('Romeu e Julieta', 33.90)">
-              Add +
-            </button>
-          </article>
-          <article class="card">
-            <img
-              src="https://media.istockphoto.com/id/1286571718/pt/foto/grand-gateau-ice-cream-chocolate-and-strawberry-on-wood-background.jpg?s=612x612&w=0&k=20&c=aR97v9ThGQWGC-tq8Eozw2PQGwl7ESl0ZdLYZYOLA-A="
-            />
-            <h3>Grand Gateau</h3>
-            <p>Pequeno bolo de chocolate com picolé magnum.</p>
-            <span>R$ 29,90</span>
-            <button onclick="addToCart('Grand Gateau', 29.90)">Add +</button>
-          </article>
-        </div>
+        <div class="grid-menu" id="grid-doces"></div>
       </section>
 
       <section id="bebidas" class="menu-category">
         <h2 class="category-title">Bebidas Geladas</h2>
-        <div class="grid-menu">
-          <article class="card">
-            <img
-              src="https://www.naturaldaterra.com.br/_next/image?url=https%3A%2F%2Fnaturalterra.vtexassets.com%2Farquivos%2Fids%2F173881%2FRefrigerante-Coca-Cola-sabor-original-2l-gelada.jpg.jpg%3Fv%3D638944163980900000%26format%3Dwebp&w=1440&q=75"
-              alt="Coca"
-            />
-            <h3>Coca-Cola 2L</h3>
-            <p>A clássica, trincando de gelada.</p>
-            <span>R$ 14,00</span>
-            <button onclick="addToCart('Coca-Cola 2L', 14.00)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://www.arenaatacado.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw057d3d52/Produtos/682179-7899916900503-suco%20natural%20one%20laranja%20integral%2015l-natural%20one-2.jpg"
-              alt="Suco"
-            />
-            <h3>Suco Natural 1L</h3>
-            <p>Laranja 100% da fruta.</p>
-            <span>R$ 18,00</span>
-            <button onclick="addToCart('Suco Laranja', 18.00)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://carrefourbrfood.vtexassets.com/arquivos/ids/193526100/7941234_1.jpg?v=638864688650200000"
-              alt="Heineken"
-            />
-            <h3>Heineken Long Neck</h3>
-            <p>330ml. Venda proibida para menores.</p>
-            <span>R$ 12,00</span>
-            <button onclick="addToCart('Heineken', 12.00)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://www.imigrantesbebidas.com.br/bebida/images/products/full/2893-agua-mineral-crystal-sem-gas-500ml.jpg"
-              alt="Agua"
-            />
-            <h3>Água Mineral</h3>
-            <p>500ml. Com ou sem gás.</p>
-            <span>R$ 5,00</span>
-            <button onclick="addToCart('Água', 5.00)">Add +</button>
-          </article>
-          <article class="card">
-            <img
-              src="https://io.convertiez.com.br/m/superpaguemenos/shop/products/images/14062/medium/refrigerante-antarctica-guarana-2l_18875.png"
-              alt="Nana"
-            />
-            <h3>Guaraná 2L</h3>
-            <p>O original do Brasil.</p>
-            <span>R$ 12,00</span>
-            <button onclick="addToCart('Guaraná 2L', 12.00)">Add +</button>
-          </article>
-        </div>
+        <div class="grid-menu" id="grid-bebidas"></div>
       </section>
 
       <section id="sobre" class="about-section">
         <div class="about-content">
-          <h2>O Império do Sabor</h2>
+          <h2>O Legado do Sabor</h2>
           <p>
-            Fundada em 2015, a Imperium Pizza nasceu com a missão de elevar o
-            padrão da pizza de bairro. Nossos pizzaiolos são treinados na arte
-            da fermentação natural, garantindo uma massa leve, crocante e de
-            fácil digestão.
+            Mais do que uma pizzaria, a <strong>Imperium</strong> é uma celebração à verdadeira gastronomia.
+            Desde 2015, nossa missão é desafiar o comum. Substituímos a pressa pela paciência da
+            <strong>fermentação natural de 48 horas</strong>, resultando em uma massa leve, aerada e de digestão perfeita.
           </p>
           <p>
-            Utilizamos apenas ingredientes D.O.C. e nosso molho é feito
-            diariamente com tomates pelados italianos. Venha viver essa
-            experiência gastronômica.
+            Não aceitamos atalhos. Nosso molho é preparado diariamente com tomates <em>Pelati</em> italianos autênticos,
+            e cada ingrediente é selecionado rigorosamente para garantir o selo de excelência D.O.C.
+            Aqui, cada fatia conta uma história de tradição e paixão.
           </p>
         </div>
       </section>
@@ -356,12 +116,10 @@
           <h4>Contato</h4>
           <p>Rua dos Sabores, 999 - Centro</p>
           <p>(11) 99999-9999</p>
-          <p>contato@imperiumpizza.com</p>
         </div>
         <div class="footer-col">
           <h4>Horários</h4>
           <p>Ter a Dom: 18h às 23:30h</p>
-          <p>Seg: Fechado</p>
         </div>
       </div>
       <div class="copy">
@@ -369,6 +127,15 @@
         por Valber Lucas.
       </div>
     </footer>
+
+    <div id="checkout-modal" class="modal-container">
+      <div class="modal-content">
+        <i class="fas fa-check-circle success-icon"></i>
+        <h2>Pedido Recebido!</h2>
+        <p>Suas pizzas estão a caminho! 🍕</p>
+        <button class="btn-close-modal" id="btn-close-modal">Entendido</button>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
