@@ -2,7 +2,7 @@
 
 Projeto front-end de uma Landing Page para pizzaria com sistema de carrinho funcional. O objetivo foi aplicar conceitos de manipulação de DOM, design responsivo e estruturação semântica.
 
-🔗 **[Acesse Online Aqui] [https://imperiumpizzaria-kappa.vercel.app/]**
+🔗 **[Acesse Online Aqui] [Imperium Pizza](https://imperiumpizzaria-kappa.vercel.app/)**
 
 <img width="1344" height="585" alt="Imperium-pizza" src="https://github.com/user-attachments/assets/a08cd17a-f13e-4afd-be86-38ef37a8c9f7" />
 
