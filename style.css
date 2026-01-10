@@ -1,0 +1,427 @@
+:root {
+  --primary: #ffd700;
+  --primary-dark: #d4af37;
+  --bg-dark: #111111;
+  --bg-card: #1c1c1c;
+  --text-light: #f5f5f5;
+  --text-gray: #b0b0b0;
+  --success: #2ecc71;
+  --font-heading: "Bebas Neue", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+header {
+  background: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+
+.logo {
+  font-size: 2rem;
+  font-family: var(--font-heading);
+  color: var(--primary);
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--primary);
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.header-actions .cart-icon {
+  font-size: 1.4rem;
+  color: #fff;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.header-actions .cart-icon:hover {
+  color: var(--primary);
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  background: var(--bg-card);
+  text-align: center;
+  border-bottom: 2px solid var(--primary);
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+}
+
+.hero {
+  height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
+    url("https://media.istockphoto.com/id/1482471854/pt/foto/wood-fire-pizza-oven.jpg?s=612x612&w=0&k=20&c=1-uZc7tnFzx5mZ1Z76gUXyBfdkHzYsHSPAjYXPk9vk0=");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  color: var(--primary);
+  text-shadow: 2px 2px 4px #000;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn-cta {
+  padding: 15px 40px;
+  background: var(--primary);
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-cta:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.category-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  text-align: center;
+  margin: 60px 0 30px;
+  border-bottom: 2px solid var(--primary);
+  display: inline-block;
+}
+
+.grid-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin: 15px;
+  color: var(--primary);
+}
+
+.card p {
+  padding: 0 15px;
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  flex-grow: 1;
+}
+
+.card span {
+  display: block;
+  margin: 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.card button {
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+  border: none;
+  border-top: 1px solid #333;
+  color: var(--primary);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+.card button:hover {
+  background: var(--primary);
+  color: #000;
+}
+
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background: #1a1a1a;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.8);
+  transform: translateX(100%);
+  transition: 0.3s;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-sidebar.open {
+  transform: translateX(0);
+}
+
+.cart-header {
+  padding: 20px;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-cart {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.cart-items {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+.remove-btn {
+  color: #ff4757;
+  cursor: pointer;
+}
+
+.cart-footer {
+  padding: 20px;
+  background: #000;
+}
+
+.cart-total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.btn-checkout {
+  width: 100%;
+  padding: 15px;
+  background: var(--success);
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.float-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  text-decoration: none;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1500;
+  transition: 0.3s;
+}
+
+.float-whatsapp:hover {
+  transform: scale(1.1);
+  background-color: #1ebc57;
+}
+
+.about-section {
+  background: #1c1c1c;
+  padding: 60px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #333;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.about-section h2 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+footer {
+  background: #000;
+  padding: 50px 20px;
+  margin-top: 50px;
+  border-top: 2px solid var(--primary);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.footer-col h4 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-family: var(--font-heading);
+}
+
+.copy {
+  text-align: center;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .cart-sidebar {
+    width: 100%;
+  }
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
