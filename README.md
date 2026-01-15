@@ -1,3 +1,5 @@
+<img src="VLCODE.png" alt="logo" width="150">
+
 # Imperium Pizza
 
 Projeto front-end de uma Landing Page para pizzaria com sistema de carrinho funcional. O objetivo foi aplicar conceitos de manipulação de DOM, design responsivo e estruturação semântica.
