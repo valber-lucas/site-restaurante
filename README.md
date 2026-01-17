@@ -9,19 +9,19 @@ Projeto front-end de uma Landing Page para pizzaria com sistema de carrinho func
 <img width="1344" height="585" alt="Imperium-pizza" src="https://github.com/user-attachments/assets/a08cd17a-f13e-4afd-be86-38ef37a8c9f7" />
 
 
-## 🛠 Tecnologias
+## Tecnologias
 
 * **HTML5:** Estrutura semântica.
 * **CSS3:** Flexbox, Grid, Variáveis CSS, Glassmorphism e Media Queries.
 * **JavaScript (ES6+):** Lógica do carrinho de compras, manipulação do DOM e eventos.
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 * **Carrinho de Compras:** Adição e remoção de itens com atualização dinâmica do valor total.
 * **Design Responsivo:** Layout adaptável para Mobile e Desktop.
 * **UI/UX:** Tema escuro (Dark Mode) com navegação fluida (Smooth Scroll).
 
-## 🚀 Como executar
+## Como executar
 
 ```bash
 # Clone este repositório
